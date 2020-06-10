@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page Design</title>
+
+  <!-- Link to Stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Link to Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="container">
+    <div class="container__left">
+
+      <nav class="container__nav">
+        <a href="#" class="btn-link">&leftarrow;</a>
+        <a href="#" class="btn-link">Register</a>
+      </nav>
+
+      <form action="#" class="form">
+        <h2 class="heading-secondary">Login</h2>
+        <p class="container__para">Welcome! Please fill Username and Password to Log in To Your Account.</p>
+
+        <div class="form__group">
+          <input type="email" class="form__input" placeholder="Email" id="username" required>
+          <div class="form__flag">&nbsp;</div>
+          <label for="username" class="form__label">Email</label>
+        </div>
+
+        <div class="form__group">
+          <input type="password" class="form__input" placeholder="Password" id=" pswd" required minlength="1" maxlength="8">
+          <div class="form__flag">&nbsp;</div>
+          <label for="pswd" class="form__label">Password</label>
+        </div>
+
+        <a href="#" class="btn-forgot">Forgot Your Password?</a>
+
+        <button type="submit" class="btn-submit">Login Now</button>
+
+        <div class="form__social-box">
+          <p class="container__para">You can also login with:</p>
+          <ul class="form__list">
+            <li class="form__item"><a href="#" class="form__link">Facebook</a></li>
+            <li class="form__item"><a href="#" class="form__link">Instagram</a></li>
+            <li class="form__item"><a href="#" class="form__link">Twitter</a></li>
+          </ul>
+        </div>
+
+      </form>
+    </div>
+    <div class="container__right">
+    &nbsp;
+    </div>
+  </div>  
+</body>
+</html>

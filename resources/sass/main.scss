@@ -1,0 +1,228 @@
+:root{
+  --color-background: #eeeeee;
+  --color-primary: #32e0c4;
+  --color-grey-light: #393e46;
+  --color-grey-dark: #222831;
+  --color-red: red;
+  --color-green: lightgreen; 
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: inherit;
+}
+
+html{
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body{
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: var(--color-grey-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--color-primary);
+}
+
+.container{
+  width: 70%;
+  background-color: #fff;
+  // margin: 8rem auto;
+  box-shadow: 0 4rem 6rem rgba(0,0,0,.2);
+  font-size: 1.6rem;
+  border-radius: 10px;
+  display: flex;
+  overflow: hidden;
+
+  &__left{
+    height: 100%; 
+    flex: 0 0 45%;
+  }
+
+  &__nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+  }
+
+  &__right{
+    background-image: url("../vendors/img/1.jpg");
+    background-size: 100% 100%;
+    flex: 1;
+    background-repeat: no-repeat;
+  } 
+
+  &__para{
+    font-size: 1.6rem;
+    margin-bottom: 4rem;
+  }
+
+}
+
+.form{
+  margin-top: 2rem;
+  padding: 3rem 6rem;
+  display: flex;
+  flex-direction: column;
+
+  &__group{
+    position: relative;
+
+    &:not(:last-child){
+      margin-bottom: 2.9rem;
+    }
+  }
+
+  &__input{
+    width: 100%;
+    padding: 1rem;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    background-color:var(--color-background) ;
+    border: none;
+    border-radius: 3px;
+
+    &::-webkit-input-placeholder{
+      font-size: 1.4rem;
+    }
+  }
+
+  &__label{
+    position: absolute;
+    top: -2.25rem;
+    left: .8rem;
+    font-size: 1.4rem;
+    transform: translateY(3.5rem);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s;
+    margin-bottom: .5rem;
+  }
+
+  &__input:not(:placeholder-shown) ~ &__label{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &__input:not(:placeholder-shown) + &__flag,
+  &__input:not(:placeholder-shown) + &__flag::before{
+    opacity: 1;
+    visibility: visible;
+  }
+
+
+
+  &__input:focus{
+    outline: none;
+  }
+
+  &__input:invalid + &__flag,
+  &__input:invalid + &__flag::before {
+    background-color: var(--color-red);    
+  }
+
+  &__flag{
+    width: 4px;
+    height: 3.2rem;
+    background-color: var(--color-green);
+    position: absolute;
+    top: .4rem;
+    left: 37.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s;
+
+    &::before{
+      content: "";
+      width: 2rem;
+      height: 2rem;
+      clip-path: polygon(50% 0, 50% 0, 100% 100%, 0 100% );
+      background-color: var(--color-green);
+      position: absolute;
+      top: -.1rem;
+      left: .1rem;
+      transform: rotate(90deg);
+      opacity: 1;
+      visibility: hidden;
+      transition: all .4s;
+
+    }
+  }
+
+  &__social-box{
+    margin-top: 5rem ;
+    padding: 3rem 0;
+    border-top: 1px solid var(--color-primary);
+    text-align: center;
+  }
+
+  &__list{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item{
+    margin-right: 1.8rem;
+  }
+
+  &__link{
+    text-decoration: none;
+    color: var(--color-primary);
+  }
+}
+
+.btn-link{
+  text-decoration: none;
+  display: inline-block;
+  color: var(--color-grey-light);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.btn-submit{
+  border: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  background-color:var(--color-primary);
+  color: #fff;
+  border-radius: 10rem;
+  cursor: pointer;
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+
+  &:focus,
+  &:active{
+    outline: none;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+  }
+
+
+}
+
+.btn-forgot{
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: var(--color-grey-light);
+  letter-spacing: 1px;
+  align-self: flex-end;
+  margin-bottom: 2rem;
+}
+
+.heading-secondary{
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
